@@ -5,6 +5,13 @@ Hudl's `iOS-FFmpeg-processor` project aims to provide a simple way to obtain a `
 Using Kickflip's strategy of writing video only rolling 50MB `.mp4`s using `AVFoundation` and then passing the bytestream into FFmpeg for processing, while at the same time taking the bytestream from the microphone, adding ADTS headers, and then passing that into FFmpeg as well, muxing the 2 streams together.
 
 <h3>How To Use</h3>
+```git submodule add https://github.com/hudl/iOS-FFmpeg-processor.git Submodules/HudlFFmpeg```
+
+Drag and drop `HudlFFmpegProcessor.xcodeproj` into your current project's workspace
+
+Add `libHudlFFmpegProcessor.a` and `libc++.a` to your projects `Build Phases` under `Link Binary With Libraries`
+
+In `Build Settings` add `$(PROJECT_DIR)/Submodules/HudlFFmpeg/HudlFFmpegProcessor` (recursive) to the `User Header Search Paths` section and ensure `Always Search User Paths` is set to yes.
 
 <h3>Resources Used in Development</h3>
 <ul>
