@@ -13,6 +13,9 @@ Add `libHudlFFmpegProcessor.a`, `libc++.dylib`, `libiconv.dylib` and `libz.dylib
 
 In `Build Settings` add `$(PROJECT_DIR)/Submodules/HudlFFmpeg/HudlFFmpegProcessor` (recursive) to the `User Header Search Paths` section and ensure `Always Search User Paths` is set to yes.
 
+<h3>Sample App</h3>
+The sample app should work out of the box. You might need to `rm -rf ~/Library/Develop/Xcode/DerivedData/` first though.
+
 <h3>Resources Used in Development</h3>
 <ul>
 <li>https://github.com/kewlbear/FFmpeg-iOS-build-script</li>
