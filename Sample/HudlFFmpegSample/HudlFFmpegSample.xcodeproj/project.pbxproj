@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED0C13C21AA635ED008639D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0C13C11AA635ED008639D6 /* main.m */; };
+		ED0C13C51AA635ED008639D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0C13C41AA635ED008639D6 /* AppDelegate.m */; };
+		ED0C13C81AA635ED008639D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0C13C71AA635ED008639D6 /* ViewController.m */; };
+		ED0C13CB1AA635ED008639D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED0C13C91AA635ED008639D6 /* Main.storyboard */; };
+		ED0C13CD1AA635ED008639D6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED0C13CC1AA635ED008639D6 /* Images.xcassets */; };
+		ED0C13D01AA635ED008639D6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED0C13CE1AA635ED008639D6 /* LaunchScreen.xib */; };
+		ED0C13DC1AA635ED008639D6 /* HudlFFmpegSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0C13DB1AA635ED008639D6 /* HudlFFmpegSampleTests.m */; };
+		ED0C13E81AA63646008639D6 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0C13E71AA63646008639D6 /* libc++.dylib */; };
+		ED316D571AA7610F00B685DE /* libHudlFFmpegProcessor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED316D561AA7610F00B685DE /* libHudlFFmpegProcessor.a */; };
+		ED316D591AA761CF00B685DE /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED316D581AA761CF00B685DE /* libiconv.dylib */; };
+		ED316D5B1AA7622300B685DE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED316D5A1AA7622300B685DE /* libz.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED0C13D61AA635ED008639D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED0C13B41AA635ED008639D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED0C13BB1AA635ED008639D6;
+			remoteInfo = HudlFFmpegSample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ED0C13BC1AA635ED008639D6 /* HudlFFmpegSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HudlFFmpegSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED0C13C01AA635ED008639D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED0C13C11AA635ED008639D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ED0C13C31AA635ED008639D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ED0C13C41AA635ED008639D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ED0C13C61AA635ED008639D6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		ED0C13C71AA635ED008639D6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ED0C13CA1AA635ED008639D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED0C13CC1AA635ED008639D6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ED0C13CF1AA635ED008639D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		ED0C13D51AA635ED008639D6 /* HudlFFmpegSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HudlFFmpegSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED0C13DA1AA635ED008639D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED0C13DB1AA635ED008639D6 /* HudlFFmpegSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HudlFFmpegSampleTests.m; sourceTree = "<group>"; };
+		ED0C13E71AA63646008639D6 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		ED316D561AA7610F00B685DE /* libHudlFFmpegProcessor.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libHudlFFmpegProcessor.a; path = "Submodules/HudlFFmpeg/build/Debug-iphoneos/libHudlFFmpegProcessor.a"; sourceTree = "<group>"; };
+		ED316D581AA761CF00B685DE /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		ED316D5A1AA7622300B685DE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED0C13B91AA635ED008639D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED316D5B1AA7622300B685DE /* libz.dylib in Frameworks */,
+				ED316D591AA761CF00B685DE /* libiconv.dylib in Frameworks */,
+				ED316D571AA7610F00B685DE /* libHudlFFmpegProcessor.a in Frameworks */,
+				ED0C13E81AA63646008639D6 /* libc++.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED0C13D21AA635ED008639D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED0C13B31AA635ED008639D6 = {
+			isa = PBXGroup;
+			children = (
+				ED316D5A1AA7622300B685DE /* libz.dylib */,
+				ED316D581AA761CF00B685DE /* libiconv.dylib */,
+				ED316D561AA7610F00B685DE /* libHudlFFmpegProcessor.a */,
+				ED0C13E71AA63646008639D6 /* libc++.dylib */,
+				ED0C13BE1AA635ED008639D6 /* HudlFFmpegSample */,
+				ED0C13D81AA635ED008639D6 /* HudlFFmpegSampleTests */,
+				ED0C13BD1AA635ED008639D6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED0C13BD1AA635ED008639D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED0C13BC1AA635ED008639D6 /* HudlFFmpegSample.app */,
+				ED0C13D51AA635ED008639D6 /* HudlFFmpegSampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED0C13BE1AA635ED008639D6 /* HudlFFmpegSample */ = {
+			isa = PBXGroup;
+			children = (
+				ED0C13C31AA635ED008639D6 /* AppDelegate.h */,
+				ED0C13C41AA635ED008639D6 /* AppDelegate.m */,
+				ED0C13C61AA635ED008639D6 /* ViewController.h */,
+				ED0C13C71AA635ED008639D6 /* ViewController.m */,
+				ED0C13C91AA635ED008639D6 /* Main.storyboard */,
+				ED0C13CC1AA635ED008639D6 /* Images.xcassets */,
+				ED0C13CE1AA635ED008639D6 /* LaunchScreen.xib */,
+				ED0C13BF1AA635ED008639D6 /* Supporting Files */,
+			);
+			path = HudlFFmpegSample;
+			sourceTree = "<group>";
+		};
+		ED0C13BF1AA635ED008639D6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED0C13C01AA635ED008639D6 /* Info.plist */,
+				ED0C13C11AA635ED008639D6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ED0C13D81AA635ED008639D6 /* HudlFFmpegSampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED0C13DB1AA635ED008639D6 /* HudlFFmpegSampleTests.m */,
+				ED0C13D91AA635ED008639D6 /* Supporting Files */,
+			);
+			path = HudlFFmpegSampleTests;
+			sourceTree = "<group>";
+		};
+		ED0C13D91AA635ED008639D6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED0C13DA1AA635ED008639D6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED0C13BB1AA635ED008639D6 /* HudlFFmpegSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED0C13DF1AA635ED008639D6 /* Build configuration list for PBXNativeTarget "HudlFFmpegSample" */;
+			buildPhases = (
+				ED0C13B81AA635ED008639D6 /* Sources */,
+				ED0C13B91AA635ED008639D6 /* Frameworks */,
+				ED0C13BA1AA635ED008639D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HudlFFmpegSample;
+			productName = HudlFFmpegSample;
+			productReference = ED0C13BC1AA635ED008639D6 /* HudlFFmpegSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ED0C13D41AA635ED008639D6 /* HudlFFmpegSampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED0C13E21AA635ED008639D6 /* Build configuration list for PBXNativeTarget "HudlFFmpegSampleTests" */;
+			buildPhases = (
+				ED0C13D11AA635ED008639D6 /* Sources */,
+				ED0C13D21AA635ED008639D6 /* Frameworks */,
+				ED0C13D31AA635ED008639D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED0C13D71AA635ED008639D6 /* PBXTargetDependency */,
+			);
+			name = HudlFFmpegSampleTests;
+			productName = HudlFFmpegSampleTests;
+			productReference = ED0C13D51AA635ED008639D6 /* HudlFFmpegSampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED0C13B41AA635ED008639D6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Agile Sports - Hudl";
+				TargetAttributes = {
+					ED0C13BB1AA635ED008639D6 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					ED0C13D41AA635ED008639D6 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = ED0C13BB1AA635ED008639D6;
+					};
+				};
+			};
+			buildConfigurationList = ED0C13B71AA635ED008639D6 /* Build configuration list for PBXProject "HudlFFmpegSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED0C13B31AA635ED008639D6;
+			productRefGroup = ED0C13BD1AA635ED008639D6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED0C13BB1AA635ED008639D6 /* HudlFFmpegSample */,
+				ED0C13D41AA635ED008639D6 /* HudlFFmpegSampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED0C13BA1AA635ED008639D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED0C13CB1AA635ED008639D6 /* Main.storyboard in Resources */,
+				ED0C13D01AA635ED008639D6 /* LaunchScreen.xib in Resources */,
+				ED0C13CD1AA635ED008639D6 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED0C13D31AA635ED008639D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED0C13B81AA635ED008639D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED0C13C81AA635ED008639D6 /* ViewController.m in Sources */,
+				ED0C13C51AA635ED008639D6 /* AppDelegate.m in Sources */,
+				ED0C13C21AA635ED008639D6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED0C13D11AA635ED008639D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED0C13DC1AA635ED008639D6 /* HudlFFmpegSampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED0C13D71AA635ED008639D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED0C13BB1AA635ED008639D6 /* HudlFFmpegSample */;
+			targetProxy = ED0C13D61AA635ED008639D6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED0C13C91AA635ED008639D6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED0C13CA1AA635ED008639D6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ED0C13CE1AA635ED008639D6 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED0C13CF1AA635ED008639D6 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED0C13DD1AA635ED008639D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Submodules/HudlFFmpeg/HudlFFmpegProcessor/**";
+			};
+			name = Debug;
+		};
+		ED0C13DE1AA635ED008639D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Submodules/HudlFFmpeg/HudlFFmpegProcessor/**";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED0C13E01AA635ED008639D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HudlFFmpegSample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/bclymer/Documents/Github/iOS-FFmpeg-processor/Sample/Submodules/HudlFFmpeg/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/HudlFFmpegSample-emoldmqwujhhoxairpzsrtcbiupi/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)/Submodules/HudlFFmpeg/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Submodules/HudlFFmpeg/HudlFFmpegProcessor/**";
+			};
+			name = Debug;
+		};
+		ED0C13E11AA635ED008639D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HudlFFmpegSample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/bclymer/Documents/Github/iOS-FFmpeg-processor/Sample/Submodules/HudlFFmpeg/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/HudlFFmpegSample-emoldmqwujhhoxairpzsrtcbiupi/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)/Submodules/HudlFFmpeg/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Submodules/HudlFFmpeg/HudlFFmpegProcessor/**";
+			};
+			name = Release;
+		};
+		ED0C13E31AA635ED008639D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HudlFFmpegSampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HudlFFmpegSample.app/HudlFFmpegSample";
+			};
+			name = Debug;
+		};
+		ED0C13E41AA635ED008639D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HudlFFmpegSampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HudlFFmpegSample.app/HudlFFmpegSample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED0C13B71AA635ED008639D6 /* Build configuration list for PBXProject "HudlFFmpegSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED0C13DD1AA635ED008639D6 /* Debug */,
+				ED0C13DE1AA635ED008639D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED0C13DF1AA635ED008639D6 /* Build configuration list for PBXNativeTarget "HudlFFmpegSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED0C13E01AA635ED008639D6 /* Debug */,
+				ED0C13E11AA635ED008639D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED0C13E21AA635ED008639D6 /* Build configuration list for PBXNativeTarget "HudlFFmpegSampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED0C13E31AA635ED008639D6 /* Debug */,
+				ED0C13E41AA635ED008639D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED0C13B41AA635ED008639D6 /* Project object */;
+}
