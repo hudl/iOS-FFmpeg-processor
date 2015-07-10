@@ -29,7 +29,7 @@ extern NSString *const SegmentManifestName;
 
 @property (nonatomic, strong) AVCaptureSession *session;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
-@property (nonatomic, strong, readonly) AVCaptureDevice *videoDevice;
+@property (nonatomic, strong) AVCaptureDevice *videoDevice;
 @property (nonatomic, strong, readonly) AVCaptureConnection *videoConnection;
 
 @property (nonatomic, strong) KFAACEncoder *aacEncoder;
