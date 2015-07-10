@@ -169,7 +169,7 @@
 		EDFA73C11A8A86BE00FDC9F2 /* sha512.h in Headers */ = {isa = PBXBuildFile; fileRef = ED92EAB91A705DAC00E2C415 /* sha512.h */; };
 		EDFA73C21A8A86BE00FDC9F2 /* stereo3d.h in Headers */ = {isa = PBXBuildFile; fileRef = ED92EABA1A705DAC00E2C415 /* stereo3d.h */; };
 		EDFA73C31A8A86BE00FDC9F2 /* threadmessage.h in Headers */ = {isa = PBXBuildFile; fileRef = ED92EABB1A705DAC00E2C415 /* threadmessage.h */; };
-		EDFA73C41A8A86BE00FDC9F2 /* time.h in Headers */ = {isa = PBXBuildFile; fileRef = ED92EABC1A705DAC00E2C415 /* time.h */; };
+		EDFA73C41A8A86BE00FDC9F2 /* c-time.h in Headers */ = {isa = PBXBuildFile; fileRef = ED92EABC1A705DAC00E2C415 /* c-time.h */; };
 		EDFA73C51A8A86BE00FDC9F2 /* timecode.h in Headers */ = {isa = PBXBuildFile; fileRef = ED92EABD1A705DAC00E2C415 /* timecode.h */; };
 		EDFA73C61A8A86BE00FDC9F2 /* timestamp.h in Headers */ = {isa = PBXBuildFile; fileRef = ED92EABE1A705DAC00E2C415 /* timestamp.h */; };
 		EDFA73C71A8A86BE00FDC9F2 /* version.h in Headers */ = {isa = PBXBuildFile; fileRef = ED92EABF1A705DAC00E2C415 /* version.h */; };
@@ -439,7 +439,7 @@
 		ED92EAB91A705DAC00E2C415 /* sha512.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha512.h; sourceTree = "<group>"; };
 		ED92EABA1A705DAC00E2C415 /* stereo3d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stereo3d.h; sourceTree = "<group>"; };
 		ED92EABB1A705DAC00E2C415 /* threadmessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = threadmessage.h; sourceTree = "<group>"; };
-		ED92EABC1A705DAC00E2C415 /* time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = time.h; sourceTree = "<group>"; };
+		ED92EABC1A705DAC00E2C415 /* c-time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "c-time.h"; sourceTree = "<group>"; };
 		ED92EABD1A705DAC00E2C415 /* timecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timecode.h; sourceTree = "<group>"; };
 		ED92EABE1A705DAC00E2C415 /* timestamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timestamp.h; sourceTree = "<group>"; };
 		ED92EABF1A705DAC00E2C415 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
@@ -910,7 +910,7 @@
 				ED92EAB91A705DAC00E2C415 /* sha512.h */,
 				ED92EABA1A705DAC00E2C415 /* stereo3d.h */,
 				ED92EABB1A705DAC00E2C415 /* threadmessage.h */,
-				ED92EABC1A705DAC00E2C415 /* time.h */,
+				ED92EABC1A705DAC00E2C415 /* c-time.h */,
 				ED92EABD1A705DAC00E2C415 /* timecode.h */,
 				ED92EABE1A705DAC00E2C415 /* timestamp.h */,
 				ED92EABF1A705DAC00E2C415 /* version.h */,
@@ -1146,7 +1146,7 @@
 				EDFA73C11A8A86BE00FDC9F2 /* sha512.h in Headers */,
 				EDFA73C21A8A86BE00FDC9F2 /* stereo3d.h in Headers */,
 				EDFA73C31A8A86BE00FDC9F2 /* threadmessage.h in Headers */,
-				EDFA73C41A8A86BE00FDC9F2 /* time.h in Headers */,
+				EDFA73C41A8A86BE00FDC9F2 /* c-time.h in Headers */,
 				EDFA73C51A8A86BE00FDC9F2 /* timecode.h in Headers */,
 				EDFA73C61A8A86BE00FDC9F2 /* timestamp.h in Headers */,
 				EDFA73C71A8A86BE00FDC9F2 /* version.h in Headers */,
