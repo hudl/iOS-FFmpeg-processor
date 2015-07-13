@@ -28,6 +28,8 @@ static int32_t fragmentOrder;
 
 @property (nonatomic, strong) AVCaptureVideoDataOutput *videoOutput;
 @property (nonatomic, strong) AVCaptureAudioDataOutput *audioOutput;
+@property (nonatomic, strong) AVCaptureDeviceInput *audioInput;
+@property (nonatomic, strong) AVCaptureDeviceInput *videoInput;
 @property (nonatomic, strong) dispatch_queue_t videoQueue;
 @property (nonatomic, strong) dispatch_queue_t audioQueue;
 @property (nonatomic, strong) AVCaptureConnection *audioConnection;
@@ -221,14 +223,14 @@ static int32_t fragmentOrder;
      */
     AVCaptureDevice *audioDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeAudio];
     NSError *error = nil;
-    AVCaptureDeviceInput *audioInput = [[AVCaptureDeviceInput alloc] initWithDevice:audioDevice error:&error];
+    self.audioInput = [[AVCaptureDeviceInput alloc] initWithDevice:audioDevice error:&error];
     if (error)
     {
         NSLog(@"Error getting audio input device: %@", error.description);
     }
-    if ([self.session canAddInput:audioInput])
+    if ([self.session canAddInput:self.audioInput])
     {
-        [self.session addInput:audioInput];
+        [self.session addInput:self.audioInput];
     }
 
     self.audioQueue = dispatch_queue_create("Audio Capture Queue", DISPATCH_QUEUE_SERIAL);
@@ -244,15 +246,14 @@ static int32_t fragmentOrder;
 - (void)setupVideoCapture
 {
     NSError *error = nil;
-    _videoDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    AVCaptureDeviceInput* videoInput = [AVCaptureDeviceInput deviceInputWithDevice:self.videoDevice error:&error];
+    self.videoInput = [AVCaptureDeviceInput deviceInputWithDevice:self.videoDevice error:&error];
     if (error)
     {
         NSLog(@"Error getting video input device: %@", error.description);
     }
-    if ([self.session canAddInput:videoInput])
+    if ([self.session canAddInput:self.videoInput])
     {
-        [self.session addInput:videoInput];
+        [self.session addInput:self.videoInput];
     }
 
     // create an output for YUV output with self as delegate
@@ -279,6 +280,14 @@ static int32_t fragmentOrder;
             self.videoConnection.enablesVideoStabilizationWhenAvailable = YES;
         }
     }
+}
+
+- (void)cleanUpCameraInputAndOutput
+{
+    [self.session removeOutput:self.videoOutput];
+    [self.session removeOutput:self.audioOutput];
+    [self.session removeInput:self.videoInput];
+    [self.session removeInput:self.audioInput];
 }
 
 #pragma mark KFEncoderDelegate method
@@ -330,8 +339,21 @@ static int32_t fragmentOrder;
     }
 }
 
+- (void)setupSessionWithCaptureDevice:(AVCaptureDevice *)videoDevice
+{
+    _videoDevice = videoDevice;
+
+
+    [self setupVideoCapture];
+    [self setupAudioCapture];
+    
+    //self.previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.session];
+    //self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+}
+
 - (void)setupSession
 {
+    _videoDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     self.session = [[AVCaptureSession alloc] init];
     [self setupVideoCapture];
     [self setupAudioCapture];

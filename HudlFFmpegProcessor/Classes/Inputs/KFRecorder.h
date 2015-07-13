@@ -49,5 +49,7 @@ extern NSString *const SegmentManifestName;
 - (void)stopRecording;
 - (void)setupSession;
 - (double)durationRecorded;
+- (void)setupSessionWithCaptureDevice:(AVCaptureDevice *)videoDevice;
+- (void)cleanUpCameraInputAndOutput;
 
 @end
