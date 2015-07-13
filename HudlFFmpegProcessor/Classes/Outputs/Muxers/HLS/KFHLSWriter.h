@@ -13,16 +13,17 @@
 
 @property (nonatomic, copy, readonly) NSString *manifestPath;
 @property (nonatomic) dispatch_queue_t conversionQueue;
+@property (nonatomic, strong, readonly) NSString *directoryPath;
 
-- (id) initWithDirectoryPath:(NSString*)directoryPath segmentCount:(NSUInteger)segmentCount;
+- (id)initWithDirectoryPath:(NSString *)directoryPath segmentCount:(NSUInteger)segmentCount;
 
-- (void) addVideoStreamWithWidth:(int)width height:(int)height;
-- (void) addAudioStreamWithSampleRate:(int)sampleRate;
+- (void)addVideoStreamWithWidth:(int)width height:(int)height;
+- (void)addAudioStreamWithSampleRate:(int)sampleRate;
 
-- (BOOL) prepareForWriting:(NSError**)error;
+- (BOOL)prepareForWriting:(NSError **)error;
 
-- (void) processEncodedData:(NSData*)data presentationTimestamp:(CMTime)pts streamIndex:(NSUInteger)streamIndex isKeyFrame:(BOOL)isKeyFrame; // TODO refactor this
+- (void)processEncodedData:(NSData *)data presentationTimestamp:(CMTime)pts streamIndex:(NSUInteger)streamIndex isKeyFrame:(BOOL)isKeyFrame; // TODO refactor this
 
-- (BOOL) finishWriting:(NSError**)error;
+- (BOOL)finishWriting:(NSError **)error;
 
 @end

@@ -16,7 +16,7 @@
 #import "librtmp/log.h"
 #import "KFRecorder.h"
 
-@interface KFHLSWriter()
+@interface KFHLSWriter ()
 
 @property (nonatomic, strong) FFOutputFile *outputFile;
 @property (nonatomic, strong) FFOutputStream *videoStream;
@@ -27,7 +27,6 @@
 @property (nonatomic) NSUInteger segmentDurationSeconds;
 @property (nonatomic) NSUInteger keyFrameSkipper;
 @property (nonatomic) BOOL isFinished;
-@property (nonatomic, strong) NSString *directoryPath;
 
 @end
 
@@ -35,7 +34,8 @@
 
 - (id)initWithDirectoryPath:(NSString *)directoryPath segmentCount:(NSUInteger)segmentCount
 {
-    if (self = [super init]) {
+    if (self = [super init])
+    {
         av_register_all();
         avformat_network_init();
         avcodec_register_all();
@@ -54,7 +54,7 @@
         _videoTimeBase.den = 1000000000;
         _audioTimeBase.num = 1;
         _audioTimeBase.den = 1000000000;
-        _segmentDurationSeconds = 8;
+        _segmentDurationSeconds = 2;
         [self setupOutputFileSegmentCount:segmentCount];
         _conversionQueue = dispatch_queue_create("HLS Write queue", DISPATCH_QUEUE_SERIAL);
     }
@@ -64,7 +64,7 @@
 - (void)setupOutputFileSegmentCount:(NSUInteger)segmentCount
 {
     _manifestPath = [_directoryPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@-s-%li-f-.m3u8", SegmentManifestName, segmentCount]];
-    _outputFile = [[FFOutputFile alloc] initWithPath:self.manifestPath options:@{kFFmpegOutputFormatKey: @"hls"}];
+    _outputFile = [[FFOutputFile alloc] initWithPath:self.manifestPath options:@{ kFFmpegOutputFormatKey: @"hls" }];
 }
 
 - (void)addVideoStreamWithWidth:(int)width height:(int)height
@@ -109,7 +109,6 @@
     return YES;
 }
 
-
 - (void)processEncodedData:(NSData *)data presentationTimestamp:(CMTime)pts streamIndex:(NSUInteger)streamIndex isKeyFrame:(BOOL)isKeyFrame
 {
     if (data.length == 0)
@@ -117,7 +116,10 @@
         return;
     }
     dispatch_async(_conversionQueue, ^{
-        if (self.isFinished) return;
+        if (self.isFinished)
+        {
+            return;
+        }
 
         av_init_packet(_packet);
 
@@ -129,7 +131,7 @@
             _packet->flags |= AV_PKT_FLAG_KEY;
         }
 
-        _packet->data = (uint8_t*)data.bytes;
+        _packet->data = (uint8_t *)data.bytes;
         _packet->size = (int)data.length;
         _packet->stream_index = streamIndex;
         uint64_t scaledPTS = av_rescale_q(originalPTS, _videoTimeBase, _outputFile.formatContext->streams[_packet->stream_index]->time_base);

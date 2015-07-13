@@ -37,7 +37,7 @@ static HlsManifestParser *sharedInstance;
     
     for (NSString *line in allLinedStrings)
     {
-        if ([line containsString:SegmentManifestName])
+        if ([line rangeOfString:SegmentManifestName].location != NSNotFound)
         {
             NSString *duration = [[previousLine componentsSeparatedByCharactersInSet:[numbersAndDecimal invertedSet]] componentsJoinedByString:@""];
             AssetGroup *group = [AssetGroup new];
