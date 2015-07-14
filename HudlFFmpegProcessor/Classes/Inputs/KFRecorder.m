@@ -24,7 +24,7 @@ NSString *const SegmentManifestName = @"hudl-video-fragment";
 
 static int32_t fragmentOrder;
 
-@interface KFRecorder()
+@interface KFRecorder ()
 
 @property (nonatomic, strong) AVCaptureVideoDataOutput *videoOutput;
 @property (nonatomic, strong) AVCaptureAudioDataOutput *audioOutput;
@@ -57,7 +57,9 @@ static int32_t fragmentOrder;
 {
     KFRecorder *recorder = [KFRecorder new];
     recorder.name = name;
-    NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[[Utilities applicationSupportDirectory] stringByAppendingPathComponent:name] error:nil];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[basePath stringByAppendingPathComponent:name] error:nil];
     recorder.segmentIndex = files.count;
     return recorder;
 }
@@ -65,7 +67,10 @@ static int32_t fragmentOrder;
 - (instancetype)init
 {
     self = [super init];
-    if (!self) return nil;
+    if (!self)
+    {
+        return nil;
+    }
 
     [self setupSession];
     self.processedFragments = [NSMutableSet new];
@@ -103,7 +108,10 @@ static int32_t fragmentOrder;
         if (!self.foundManifest)
         {
             NSFileHandle *manifest = [NSFileHandle fileHandleForReadingAtPath:manifestPath];
-            if (manifest == nil) return;
+            if (manifest == nil)
+            {
+                return;
+            }
 
             [self monitorFile:manifestPath];
             //DDLogVerbose(@"Monitoring manifest file");
@@ -123,9 +131,9 @@ static int32_t fragmentOrder;
         dispatch_source_cancel(self.fileMonitorSource);
     }
     self.fileMonitorSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_VNODE, fildes,
-                                                    DISPATCH_VNODE_DELETE | DISPATCH_VNODE_WRITE | DISPATCH_VNODE_EXTEND |
-                                                    DISPATCH_VNODE_ATTRIB | DISPATCH_VNODE_LINK | DISPATCH_VNODE_RENAME |
-                                                    DISPATCH_VNODE_REVOKE, queue);
+            DISPATCH_VNODE_DELETE | DISPATCH_VNODE_WRITE | DISPATCH_VNODE_EXTEND |
+            DISPATCH_VNODE_ATTRIB | DISPATCH_VNODE_LINK | DISPATCH_VNODE_RENAME |
+            DISPATCH_VNODE_REVOKE, queue);
 
     dispatch_source_set_event_handler(self.fileMonitorSource, ^{
         [self bgPostNewFragmentsInManifest:path]; // update fragments after file modification
@@ -185,7 +193,8 @@ static int32_t fragmentOrder;
 - (void)setupHLSWriterWithName:(NSString *)name
 {
     self.foundManifest = NO;
-    NSString *basePath = [Utilities applicationSupportDirectory];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
     self.folderName = [NSString stringWithFormat:@"%@.hls", name];
     NSString *hlsDirectoryPath = [basePath stringByAppendingPathComponent:self.folderName];
 
@@ -204,7 +213,7 @@ static int32_t fragmentOrder;
     self.audioSampleRate = 44100;
     self.videoHeight = 720;
     self.videoWidth = 1280;
-    int audioBitrate = 64 * 1024; // 64 Kbps
+    int audioBitrate = 64 * 1024;       // 64 Kbps
     int videoBitrate = 3 * 1024 * 1024; // 3 Mbps
     self.h264Encoder = [[KFH264Encoder alloc] initWithBitrate:videoBitrate width:self.videoWidth height:self.videoHeight directory:self.folderName];
     self.h264Encoder.delegate = self;
@@ -260,7 +269,7 @@ static int32_t fragmentOrder;
     self.videoQueue = dispatch_queue_create("Video Capture Queue", DISPATCH_QUEUE_SERIAL);
     self.videoOutput = [[AVCaptureVideoDataOutput alloc] init];
     [self.videoOutput setSampleBufferDelegate:self queue:self.videoQueue];
-    NSDictionary *captureSettings = @{(NSString*)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange)};
+    NSDictionary *captureSettings = @{ (NSString *)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange) };
     self.videoOutput.videoSettings = captureSettings;
     self.videoOutput.alwaysDiscardsLateVideoFrames = YES;
     if ([self.session canAddOutput:self.videoOutput])
@@ -295,7 +304,7 @@ static int32_t fragmentOrder;
 {
     if (encoder == self.h264Encoder)
     {
-        KFVideoFrame *videoFrame = (KFVideoFrame*)frame;
+        KFVideoFrame *videoFrame = (KFVideoFrame *)frame;
         CMTime scaledTime = CMTimeSubtract(videoFrame.pts, self.originalSample);
         [self.hlsWriter processEncodedData:videoFrame.data presentationTimestamp:scaledTime streamIndex:0 isKeyFrame:videoFrame.isKeyFrame];
     }
@@ -309,7 +318,10 @@ static int32_t fragmentOrder;
 #pragma mark AVCaptureOutputDelegate method
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
 {
-    if (!self.isRecording) return;
+    if (!self.isRecording)
+    {
+        return;
+    }
     // pass frame to encoders
     if (connection == self.videoConnection)
     {
@@ -343,10 +355,9 @@ static int32_t fragmentOrder;
 {
     _videoDevice = videoDevice;
 
-
     [self setupVideoCapture];
     [self setupAudioCapture];
-    
+
     //self.previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.session];
     //self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
 }
@@ -386,7 +397,6 @@ static int32_t fragmentOrder;
             [self.delegate recorderDidStartRecording:self error:nil];
         });
     }
-
 }
 
 - (void)stopRecording
@@ -400,7 +410,9 @@ static int32_t fragmentOrder;
         {
             //DDLogError(@"Error stop recording: %@", error);
         }
-        NSString *fullFolderPath = [[Utilities applicationSupportDirectory] stringByAppendingPathComponent:self.folderName];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+        NSString *fullFolderPath = [basePath stringByAppendingPathComponent:self.folderName];
         [self postNewFragmentsInManifest:self.hlsWriter.manifestPath]; // update fragments after manifest finalization
         if (self.fileMonitorSource != nil)
         {
