@@ -250,7 +250,7 @@
  *
  */
 
-#include <c-time.h>
+#include "c-time.h"
 #include <stdio.h>  /* FILE */
 #include "libavcodec/avcodec.h"
 #include "libavutil/dict.h"
