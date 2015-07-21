@@ -57,7 +57,8 @@ static int32_t fragmentOrder;
 {
     KFRecorder *recorder = [KFRecorder new];
     recorder.name = name;
-    NSString *basePath = NSTemporaryDirectory();
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
     NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[basePath stringByAppendingPathComponent:name] error:nil];
     recorder.segmentIndex = files.count;
     return recorder;
@@ -192,7 +193,8 @@ static int32_t fragmentOrder;
 - (void)setupHLSWriterWithName:(NSString *)name
 {
     self.foundManifest = NO;
-    NSString *basePath = NSTemporaryDirectory();
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
     self.folderName = [NSString stringWithFormat:@"%@.hls", name];
     NSString *hlsDirectoryPath = [basePath stringByAppendingPathComponent:self.folderName];
 
@@ -408,7 +410,9 @@ static int32_t fragmentOrder;
         {
             //DDLogError(@"Error stop recording: %@", error);
         }
-        NSString *fullFolderPath = [NSTemporaryDirectory() stringByAppendingPathComponent:self.folderName];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+        NSString *fullFolderPath = [basePath stringByAppendingPathComponent:self.folderName];
         [self postNewFragmentsInManifest:self.hlsWriter.manifestPath]; // update fragments after manifest finalization
         if (self.fileMonitorSource != nil)
         {
