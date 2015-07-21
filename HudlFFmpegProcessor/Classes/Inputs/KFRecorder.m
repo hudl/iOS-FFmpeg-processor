@@ -411,7 +411,7 @@ static int32_t fragmentOrder;
         NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:fullFolderPath error:nil];
         for (NSString *path in files)
         {
-            if ([path hasSuffix:@".mp4"] || [path hasSuffix:@".m3u8"])
+            if ([path hasSuffix:@".mp4"])
             {
                 NSString *fullPath = [fullFolderPath stringByAppendingPathComponent:path];
                 [[NSFileManager defaultManager] removeItemAtPath:fullPath error:nil];
