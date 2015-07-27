@@ -202,8 +202,8 @@ static int32_t fragmentOrder;
 - (void)setupEncoders
 {
     self.audioSampleRate = 44100;
-    self.videoHeight = 720;
-    self.videoWidth = 1280;
+    self.videoHeight = 1280;
+    self.videoWidth = 720;
     int audioBitrate = 64 * 1024; // 64 Kbps
     int videoBitrate = 3 * 1024 * 1024; // 3 Mbps
     self.h264Encoder = [[KFH264Encoder alloc] initWithBitrate:videoBitrate width:self.videoWidth height:self.videoHeight directory:self.folderName];
